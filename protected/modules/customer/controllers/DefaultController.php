@@ -46,6 +46,12 @@ class DefaultController extends DController
 	{
 		$this->layout = 'column2';
 
+		$this->pageSection = 'Customer Dashboard';
+		$this->breadcrumbs = array(
+			ucfirst(Yii::app()->controller->module->id) => array('/'.Yii::app()->controller->module->id.'/'),
+			Yii::t('CustomerModule.customer','Dashboard'),
+		);
+
 		$this->render('index');
 	}
 
