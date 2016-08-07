@@ -2,7 +2,7 @@
 
 class ProductController extends DController
 {
-	public $layout='column1';
+	public $layout = 'column1';
 
 	/**
 	 * Declares class-based actions.
@@ -54,8 +54,20 @@ class ProductController extends DController
 		var_dump($_GET);exit;
 	}
 
-	public function actionView()
+	public function actionView($id)
 	{
-		var_dump($_GET);exit;
+		$this->layout = 'column_single_item';
+
+		$model = VProduct::model()->findByPk($id);
+		if(!$model instanceof VProduct)
+			throw new CHttpException(404,'The requested page does not exist.');
+
+		$this->pageSection = $model->description_one_client_rel->name;
+		$this->breadcrumbs = array(
+			'Product' => array('/product'),
+			$model->description_one_client_rel->name,
+		);
+
+		$this->render('view', array('model'=>$model));
 	}
 }

@@ -51,37 +51,6 @@
 	{{ this.get_js({'path':'css/'~App.theme.name~'/js/jquery-2.1.4.min.js'}) |raw }}
     <!-- START SITE -->
     <div id="wrapper">
-
-        <nav class="hidden-xs cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-            <h3><i class="fa fa-star-o"></i> Your Favorites</h3>
-            <ul>
-                <li>
-                    <img src="{{ App.request.baseUrl~'/css/'~App.theme.name~'/images/item_01.jpg' }}" alt="" class="alignleft img-responsive">
-                    <h4><a href="single-item.html">User Profile App</a></h4>
-                    <small><a href="single-item.html"><i class="fa fa-eye"></i> 221</a></small>
-                    <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 05</a></small>
-                </li>
-                <li>
-                    <img src="upload/item_02.jpg" alt="" class="alignleft img-responsive">
-                    <h4><a href="single-item.html">Mail Application</a></h4>
-                    <small><a href="single-item.html"><i class="fa fa-eye"></i> 435</a></small>
-                    <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 13</a></small>
-                </li>
-                <li>
-                    <img src="upload/item_03.jpg" alt="" class="alignleft img-responsive">
-                    <h4><a href="single-item.html">Showcase Podcast</a></h4>
-                    <small><a href="single-item.html"><i class="fa fa-eye"></i> 551</a></small>
-                    <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 12</a></small>
-                </li>
-                <li>
-                    <img src="upload/item_04.jpg" alt="" class="alignleft img-responsive">
-                    <h4><a href="single-item.html">Login Box (Custom)</a></h4>
-                    <small><a href="single-item.html"><i class="fa fa-eye"></i> 412</a></small>
-                    <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 55</a></small>
-                </li>
-            </ul>
-            <a href="shop-favorites.html" class="btn btn-primary">Go to Favorites</a>
-        </nav>
 	<nav id="top">
 		<div class="container">
 			<div class="pull-left">
@@ -94,7 +63,7 @@
 					<ul class="dropdown-menu">
 						{% for lcode, lname in call('PostLanguage','listData') %}
 						<li>
-						<a href="{{ lcode }}">
+						<a href="?lang={{ lcode }}">
 						<img title="{{ lname }}" alt="{{ lname }}" src="{{ App.request.baseurl~'/uploads/images/flags/'~lcode~'.png' }}">
 						{{ lname }}
 						</a>

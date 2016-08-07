@@ -4,9 +4,7 @@
 			<img src="<?php echo Yii::app()->request->baseUrl.'/'.$data->productImage->thumb.$data->productImage->image;?>" alt="" class="img-responsive">
 			<div class="magnifier">
 				<div class="item-author">
-					<a href="public-profile.html">
-						<img src="upload/member_01.jpg" class="img-circle" alt=""> <?php echo $data->vendor_rel->company;?>
-					</a>
+					<a href="<?php echo Yii::app()->createUrl('/product/view',array('id'=>$data->id,'title'=>$data->description_one_client_rel->name));?>"><?php echo $data->vendor_rel->company;?></a>
 				</div>
 				<!-- end author -->
 			</div>
